@@ -61,4 +61,32 @@ public class Day13_Tekrar02 extends TestBase {
         actions.sendKeys(Keys.PAGE_UP).perform();
         actions.sendKeys(Keys.ARROW_UP);
     }
+
+    @Test
+    public void buyukKucukYazma(){
+        driver.get("http://google.com");
+
+        WebElement searchBox=driver.findElement(By.name("q"));
+
+        //bu sekilde her karateri buyuk yapar
+        //searchBox.sendKeys(Keys.SHIFT+"amazon");
+
+
+        Actions actions =new Actions(driver);
+        actions.moveToElement(searchBox).click().keyDown(Keys.SHIFT).sendKeys("merhaba").keyUp(Keys.SHIFT).sendKeys(" nasilsiniz").perform();
+    }
+
+    @Test
+    public void dragAndDrop(){
+        driver.get("http://google.com");
+
+        WebElement searchBox=driver.findElement(By.name("q"));
+
+        WebElement logo= driver.findElement(By.id("hplogo"));
+
+        Actions actions=new Actions(driver);
+        actions.dragAndDrop(logo,searchBox).perform();
+    }
+
+
 }
