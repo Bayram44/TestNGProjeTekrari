@@ -38,6 +38,7 @@ public class Day16_Örnek extends TestBase {
         WebDriverWait wait=new WebDriverWait(driver,20);
         WebElement basariliYazisi = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bootbox-body")));
         Assert.assertTrue(basariliYazisi.isDisplayed());
+
     }
 
 }
